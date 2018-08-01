@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <form action="#" onsubmit="return validationForm(this)">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="brand">Marca</label>
+        <input type="text" id="brand" name="brand">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description">
+        <br>
+        <label for="pnormal"></label>
+        <input type="text" id="pnormal" name="pnormal">
+
+        <button type="submit">Ingresar</button>
+    </form>
 </body>
+
+<script>
+    function validationForm(form) {
+        var nombre = form.name;
+        var marca = form.brand;
+        var estracto = form.description;
+        var pNormal = form.pnormal;
+
+        const exp = /^\s+$/; // Expresion que revisa si hay solo espacios vacios
+
+        function valid(attr) {
+            if (attr == null || attr.value.lenght === 0 || exp.test(attr.value)) {
+                attr.style.border = '1px solid red';
+            } else {
+                attr.style.border = '1px solid green';
+            }
+        }
+
+        if (valid(nombre)) {
+            return false;
+        }
+
+    }
+</script>
+
 </html>

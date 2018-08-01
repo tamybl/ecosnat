@@ -1,9 +1,4 @@
-class navbar extends HTMLElement {
-    constructor () {
-        super();
-        console.log('render');
-    }
-}
+
 
 function products () {
     var container = document.querySelector('#productos');
