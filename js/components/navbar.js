@@ -1,7 +1,7 @@
 class NavBar extends HTMLElement {
     // Se llama al constructor
     constructor() {
-
+        // Metodo super
         super();
 
     }
