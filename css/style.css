@@ -2,3 +2,9 @@
     background: url(./../img/bg_nav.png);
     height: 130px;
 }
+
+header#header {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr 2fr;
+}
