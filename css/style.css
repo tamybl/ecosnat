@@ -1,3 +1,6 @@
+/* Style Form Product */
+@import "form.css";
+
 .navigation {
     background: url(./../img/bg_nav.png);
     height: 130px;

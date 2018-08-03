@@ -15,21 +15,26 @@
     <!-- menu navegacion -->
     <nav-bar></nav-bar>
 
-    <form action="#" onsubmit="return validationForm(this)">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="name">
-        <br>
-        <label for="brand">Marca</label>
-        <input type="text" id="brand" name="brand">
-        <br>
-        <label for="description">Description</label>
-        <input type="text" id="description" name="description">
-        <br>
-        <label for="pnormal"></label>
-        <input type="text" id="pnormal" name="pnormal">
+    <div class="container form">
+        <h2 class="title">Añadir Producto</h2>
+        <p>Todos los campos son requeridos</p>
+        <form action="#" onsubmit="return validationForm(this)">
+            <label for="name" >Nombre Producto</label>
+            <input type="text" id="name" name="name" placeholder="Ej: Vitaminas" required>
+            <br>
+            <label for="brand">Marca</label>
+            <input type="text" id="brand" name="brand" required>
+            <br>
+            <label for="description">Description (Máximo 100 carácteres)</label>
+            <input type="text" id="description" name="description" required maxlength="100" required>
+            <br>
+            <label for="pnormal"></label>
+            <input type="text" id="pnormal" name="pnormal">
 
-        <button type="submit">Ingresar</button>
-    </form>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
 
 
     <!-- Scripts -->
