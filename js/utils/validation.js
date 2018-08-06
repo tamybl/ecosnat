@@ -21,21 +21,38 @@ const btnPreview = document.getElementById('btnpreview');
 
 btnPreview.addEventListener('click', () => {
     var image = document.getElementById('image');
-    const exp = /^\s+$/;
-    // Se crea
     let containerImg = document.querySelector('.previewimage');
-    // Vaciar el contenedor de vista previa
-    containerImg.innerHTML = "";
-    // Se crea el elemento para ser renderizado
-    let img = document.createElement('img');
-    img.classList.add('img-fluid');
-    img.src = image.value;
-    if (fetchImage(img)) {
-        containerImg.appendChild(img);
+    // Expresión que detecta si el link corresponde a la url de una imagen
+    const exp = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|svg)/g;
+    if (exp.test(image.value)) {
+        containerImg.innerHTML = "";
+        // Se crea el elemento para ser renderizado
+        let img = document.createElement('img');
+        img.classList.add('img-fluid');
+        img.src = image.value;
+        // Si corresponde a un enlace roto, lanzara este evento de error
+        img.onerror = function () { 
+            containerImg.innerHTML = "<p>No se puede cargar la imagen.</p>";
+        }; 
+        
+        let loader = document.createElement('img');
+            loader.src = 'img/loader.gif';
+            containerImg.appendChild(loader);
+        // Si la imagen posee un link que funciona, gatillará el evento de onload que le dará tiempo a la imagen de cargar antes de arrojar error.
+        img.onload = function () {
+            
+            if (fetchImage(img)) {
+                image.style.border = '1px solid green';
+                containerImg.replaceChild(img, loader);
+            }
+
+        };
     }
     else {
+        image.style.border = '1px solid red';
         containerImg.innerHTML = "<p>La url de la imagen no es válida. Revisa e intenta nuevamente</p>";
     }
+
 
 })
 
