@@ -19,19 +19,30 @@
         <h2 class="title">Añadir Producto</h2>
         <p>Todos los campos son requeridos</p>
         <form action="#" onsubmit="return validationForm(this)">
-            <label for="name" >Nombre Producto</label>
-            <input type="text" id="name" name="name" placeholder="Ej: Vitaminas" required>
-            <br>
-            <label for="brand">Marca</label>
-            <input type="text" id="brand" name="brand" required>
-            <br>
-            <label for="description">Description (Máximo 100 carácteres)</label>
+            <div class="name">
+                <label for="name_item">Nombre Producto</label>
+                <input type="text" id="name" name="name" placeholder="Ej: Vitaminas" required>
+            </div>
+
+            <div class="brand_item">
+                <label for="brand">Marca</label>
+                <input type="text" id="brand" name="brand" required>
+            </div>
+
+            <label for="description">Descripción (Máximo 100 carácteres)</label>
             <input type="text" id="description" name="description" required maxlength="100" required>
             <br>
+            <label for="image">Imagen del Producto</label>
+            <input type="text" required id="image" name="image">
+
+            <div id="btnpreview">Preview</div>
+            <div class="previewimage">
+
+            </div>
             <label for="pnormal"></label>
             <input type="text" id="pnormal" name="pnormal">
 
-            <button type="submit">Ingresar</button>
+            <button type="submit">Ingresar Nuevo Producto</button>
         </form>
     </div>
 
