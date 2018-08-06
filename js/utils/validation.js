@@ -24,6 +24,7 @@ btnPreview.addEventListener('click', () => {
     let containerImg = document.querySelector('.previewimage');
     // Expresión que detecta si el link corresponde a la url de una imagen
     const exp = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|svg)/g;
+    
     if (exp.test(image.value)) {
         containerImg.innerHTML = "";
         // Se crea el elemento para ser renderizado
