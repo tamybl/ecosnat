@@ -18,6 +18,7 @@ nav.navbar {
     background: url(./../img/bg_nav.png) no-repeat;
     background-size: cover;
     background-position: 50%; 
+    padding: 0;
     
 }
 
@@ -34,4 +35,55 @@ nav.navbar .content {
 nav.navbar .content .logo {
     width: 100%;
     max-height: 70px;
+}
+
+nav.navbar .section-menu__left {
+    grid-column: 1 / span 2;
+}
+nav.navbar .section-menu__right {
+    justify-content: space-between;
+}
+
+nav.navbar .section-menu__left, nav.navbar .section-menu__right, nav.navbar .panel-menu  {
+    list-style-type: none;
+    display: flex;
+    padding: 3px;
+    margin: 0;
+    align-items: center;
+}
+nav.navbar a.menu-item__link {
+    padding: 8px 10px;
+    color: #555;
+    font-weight: 700;
+}
+
+/* Menu Search */
+
+nav.navbar .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav.navbar .search button {
+    padding: 4px 10px;
+    background-image: linear-gradient(-225deg, #97db18 0%, #4aa504 100%);
+    border: 1px solid #4aa504;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+}
+
+nav.navbar input#searchinput {
+    border: 1px solid #d6cebb;
+    background: #f7f5f0;
+    border-radius: 4px;
+    height: 30px;
+    margin-top: 1px;
+    width: 70%;
+}
+
+nav.navbar .brand {
+    display: flex;
+    align-items: center;
 }
