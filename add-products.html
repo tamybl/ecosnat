@@ -19,28 +19,66 @@
         <h2 class="title">Añadir Producto</h2>
         <p>Todos los campos son requeridos</p>
         <form action="#" onsubmit="return validationForm(this)">
-            <div class="name">
+            <!-- Nombre -->
+            <div class="name_item">
                 <label for="name_item">Nombre Producto</label>
                 <input type="text" id="name" name="name" placeholder="Ej: Vitaminas" required>
             </div>
-
+            <!-- Marca -->
             <div class="brand_item">
                 <label for="brand">Marca</label>
                 <input type="text" id="brand" name="brand" required>
             </div>
-
-            <label for="description">Descripción (Máximo 100 carácteres)</label>
-            <input type="text" id="description" name="description" required maxlength="100" required>
-            <br>
-            <label for="image">Imagen del Producto</label>
-            <input type="text" required id="image" name="image">
-
-            <div id="btnpreview">Upload</div>
-            <div class="previewimage">
-
+            <!-- Cantidad Contenido -->
+            <div class="quantity_item">
+                <label for="quantity">Cantidad</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Ej: 130" required>
             </div>
-            <label for="pnormal"></label>
-            <input type="text" id="pnormal" name="pnormal">
+            <!-- Formato -->
+            <div class="format_item">
+                <label for="format">Formato</label>
+                <!-- <select name="format" id="format">
+                    <option value="Comprimidos">Comprimidos</option>
+                    <option value="Capsulas">Cápsulas</option>
+                    <option value="Ml">Ml.</option>
+                    <option value="Gr">Grs.</option>
+                    <option value="Unidad">Unidad</option>
+                </select> -->
+                <input type="text" required id="format" name="format" placeholder="Ej: Comprimidos, ml, etc">
+            </div>
+            <!-- Imagen Producto -->
+            <div class="image_item">
+                <label for="image">Imagen del Producto</label>
+                <input type="text" required id="image" name="image">
+                <div id="btnupload">Upload</div>
+            </div>
+            <!-- Vista Previa -->
+            <div class="previewimage"></div>
+
+            <!-- Descripcion -->
+            <div class="description_item">
+                <label for="description">Descripción (Máximo 100 carácteres)</label>
+                <input type="text" id="description" name="description" required maxlength="100" required>
+            </div>
+            <!-- Precio Normal -->
+            <div class="nprice_item">
+                <label for="normalprice">Precio Normal
+                    <span>$</span>
+                </label>
+                <input type="text" placeholder="13.990" id="normalprice" name="normalprice" required>
+            </div>
+            <!-- Precio Internet -->
+            <div class="iprice_item">
+                <label for="internetprice">Precio Internet
+                    <span>$</span>
+                </label>
+                <input type="text" placeholder="10.990" required id="internetprice" name="internetprice">
+            </div>
+            <div class="website_item">
+                <label for="website">Sitio Web</label>
+                <input type="text" placeholder="www.google.cl" required id="website" name="website">
+            </div>
+
 
             <button type="submit">Ingresar Nuevo Producto</button>
         </form>
