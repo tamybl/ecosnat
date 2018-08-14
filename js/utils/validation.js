@@ -49,7 +49,7 @@ btnUpload.addEventListener('click', () => {
         containerImg.innerHTML = "";
         // Se crea el elemento para ser renderizado
         let img = document.createElement('img');
-        img.classList.add('img-fluid'); // <img src="url"
+        img.classList.add('img-fluid'); 
         img.src = imageInput.value;
         // Si corresponde a un enlace roto, lanzara este evento de error
         img.onerror = function (err) {
@@ -65,6 +65,7 @@ btnUpload.addEventListener('click', () => {
             if (fetchImage(img)) {
                 imageInput.style.border = '1px solid green';
                 containerImg.replaceChild(img, loader);
+                
             }
         };
     }
@@ -84,3 +85,11 @@ function fetchImage(img) {
     }
     return true;
 }
+
+// Search
+
+var btnSearch = document.querySelector('#searchinput');
+
+btnSearch.addEventListener('click', (e) => {
+    e.preventDefault();
+})
