@@ -161,17 +161,21 @@ li.categories__cat-item a:hover {
     grid-template-columns: repeat(4, 1fr);
 }
 .catalogue__product-card {
-    border: 1px solid #ccc;
+    border: 1px solid rgba(179, 179, 179, 0.5);
     margin: 0 6px;
     border-radius: 4px;
     padding: 6px;
-    box-shadow: 2px 3px 4px #999;
+    box-shadow: 1px 1px 6px #bbbbbb;
 }
 
 .catalogue__product-image {
     max-width: 200px;
     display: block;
     margin: 0 auto;
+}
+
+h4.catalogue__product-title {
+    font-size: 18px;
 }
 
 

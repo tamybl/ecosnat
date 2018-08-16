@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (product.important) {
             template += `
             <div class="catalogue__product-card">
+                <div class="catalogue__product-rate"><span>* * * <span></div>
                 <img src="${product.image}" class="img-fluid catalogue__product-image">
                 <h4 class="catalogue__product-title">${product.name}</h4>
                 <div><span>Normal $</span><span>${product.normalPrice}</span></div>
-                <div><span>Normal $</span><span>${product.internetPrice}</span></div>
+                <div><span>Oferta $</span><span>${product.internetPrice}</span></div>
                 <div class="catalogue__product-cart"><button>Añadir</button></div>
             </div>`;
         }

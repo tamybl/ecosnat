@@ -1,3 +1,9 @@
+btnsubmit.addEventListener('click', function (e) {
+    e.preventDefault();
+    var form = document.querySelector('form#newproduct');
+    validationForm(form);
+})
+
 function validationForm(form) {
     let name = form.name;
     let brand = form.brand;
@@ -8,6 +14,12 @@ function validationForm(form) {
     let normalPrice = form.normalprice;
     let internetPrice = form.internetprice;
     let website = form.website;
+    // let category = form.category;
+    // let stock = form.stock;
+    // let isImportant = form.destacado.checked;
+
+    let urlpath = name.value.toLowerCase().replace(" ", "-");
+    console.log(urlpath);
 
     const exp = /^\s+$/; // Expresion que revisa si hay solo espacios vacios
 
@@ -31,6 +43,13 @@ function validationForm(form) {
     if (valid(format)) {
         return false;
     }
+
+
+
+    cart.addData(name.value, brand.value, quantity.value, format.value, imageUrl, description, normalPrice, internetPrice, urlpath, "www.now.com", "Suplemento", 20, true);
+
+    
+
 }
 
 
@@ -85,4 +104,7 @@ function fetchImage(img) {
     }
     return true;
 }
+
+
+
 
