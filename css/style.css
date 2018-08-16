@@ -178,6 +178,14 @@ h4.catalogue__product-title {
     font-size: 18px;
 }
 
+.catalogue__product-cart button {
+    background: #4aa504;
+    border: 1px solid #67bf23;
+    color: #fff;
+    font-size: 1.3em;
+    min-width: 60px;
+}
+
 
 
 /* Seccion Belleza */
