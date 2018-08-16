@@ -14,3 +14,24 @@ function products () {
         link.className("col-md-4");
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const db = window.localStorage;
+    var products = JSON.parse(db.getItem('products'));
+
+    template = ``;
+    products.forEach(function (product) {
+        if (product.important) {
+            template += `
+            <div class="catalogue__product-card">
+                <img src="${product.image}" class="img-fluid catalogue__product-image">
+                <h4 class="catalogue__product-title">${product.name}</h4>
+                <div><span>Normal $</span><span>${product.normalPrice}</span></div>
+                <div><span>Normal $</span><span>${product.internetPrice}</span></div>
+                <div class="catalogue__product-cart"><button>Añadir</button></div>
+            </div>`;
+        }
+
+    })
+    $("#catalogue").innerHTML = template;
+})
