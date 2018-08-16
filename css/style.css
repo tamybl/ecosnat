@@ -1,6 +1,9 @@
 /* Style Form Product */
 @import "form.css";
 
+:root {
+    --max-width-site: 1280px;
+}
 .navigation {
     background: url(./../img/bg_nav.png);
     height: 130px;
@@ -10,6 +13,9 @@ header#header {
     display: grid;
     display: -ms-grid;
     grid-template-columns: 1fr minmax(2fr, 700px);
+    max-width: var(--max-width-site);
+    width: 100%;
+    margin: 10px auto;
 }
 
 /* Navbar */
@@ -25,7 +31,7 @@ nav.navbar {
 nav.navbar .content {
     width: 90%;
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: var(--max-width-site);
     height: 130px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -91,6 +97,7 @@ nav.navbar .brand {
     align-items: center;
 }
 
+
 header#header .phrase {
     grid-column: 1 / span 2;
     text-align: center;
@@ -109,6 +116,64 @@ header#header .phrase p {
     color: #4d291d;
     font-style: italic;
 }
+
+header#header li {
+    list-style-type: none;
+}
+
+header#header ul {
+    padding: 0;
+}
+
+header#header h4.categories__cat-title {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    background: #67bf23;
+    padding: 10px 0;
+    color: #fff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+li.categories__cat-item a {
+    display: block;
+    width: 100%;
+    padding: 10px 4px;
+    background: #f9f8f3;
+    margin: 1px auto;
+    color: #666;
+}
+li.categories__cat-item a:hover {
+    border-right: 3px solid #67bf23;
+    background: #eeece3;
+    text-decoration: none;
+}
+
+
+/* Catalogo Destacados */
+#catalogue {
+    max-width: 1280px;
+    margin: 20px auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.catalogue__product-card {
+    border: 1px solid #ccc;
+    margin: 0 4px;
+    border-radius: 4px;
+    padding: 6px;
+    box-shadow: 2px 3px 4px #999;
+}
+
+.catalogue__product-image {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
 
 
 /* Seccion Belleza */
